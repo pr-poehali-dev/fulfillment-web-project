@@ -11,23 +11,23 @@ const Index = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
     message: ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const mailtoLink = `mailto:ffmpbox@mail.ru?subject=Заявка с сайта от ${formData.name}&body=Имя: ${formData.name}%0D%0AТелефон: ${formData.phone}%0D%0AEmail: ${formData.email}%0D%0AСообщение: ${formData.message}`;
+    const telegramMessage = `Новая заявка с сайта:%0A%0AИмя: ${formData.name}%0AТелефон: ${formData.phone}%0AСообщение: ${formData.message}`;
+    const telegramLink = `https://t.me/+79229018179?text=${telegramMessage}`;
     
-    window.location.href = mailtoLink;
+    window.open(telegramLink, '_blank');
     
     toast({
       title: "Заявка отправлена!",
       description: "Мы свяжемся с вами в ближайшее время.",
     });
     
-    setFormData({ name: '', phone: '', email: '', message: '' });
+    setFormData({ name: '', phone: '', message: '' });
   };
 
   const services = [
@@ -139,14 +139,12 @@ const Index = () => {
                 Wildberries, OZON и Яндекс Маркет. Прозрачные тарифы без скрытых платежей.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <Icon name="Calculator" className="mr-2" size={20} />
-                  Рассчитать стоимость
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8">
-                  <Icon name="PlayCircle" className="mr-2" size={20} />
-                  Видео о складе
-                </Button>
+                <a href="#tariffs">
+                  <Button size="lg" className="text-xl px-12 py-7 shadow-lg hover:shadow-xl transition-shadow">
+                    <Icon name="Calculator" className="mr-2" size={24} />
+                    Рассчитать стоимость
+                  </Button>
+                </a>
               </div>
               <div className="flex gap-8 mt-12">
                 <div>
@@ -249,19 +247,7 @@ const Index = () => {
                     className="h-12"
                   />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold mb-2 text-gray-700">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="example@mail.ru"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="h-12"
-                  />
-                </div>
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold mb-2 text-gray-700">
                     Комментарий
@@ -299,7 +285,7 @@ const Index = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=37.584163%2C55.879569&amp;z=17&amp;l=map&amp;pt=37.584163%2C55.879569,pm2rdm"
+              src="https://yandex.ru/map-widget/v1/?ll=37.587226,55.879403&amp;z=17&amp;l=map&amp;pt=37.587226,55.879403,pm2rdm"
               width="100%"
               height="500"
               frameBorder="0"

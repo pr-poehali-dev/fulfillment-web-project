@@ -1,38 +1,65 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const mailtoLink = `mailto:ffmpbox@mail.ru?subject=Заявка с сайта от ${formData.name}&body=Имя: ${formData.name}%0D%0AТелефон: ${formData.phone}%0D%0AEmail: ${formData.email}%0D%0AСообщение: ${formData.message}`;
+    
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: "Заявка отправлена!",
+      description: "Мы свяжемся с вами в ближайшее время.",
+    });
+    
+    setFormData({ name: '', phone: '', email: '', message: '' });
+  };
+
   const services = [
     {
       icon: "Package",
       title: "Приёмка товара",
       description: "Профессиональная приёмка с проверкой качества и количества",
-      price: "от 15₽/место"
+      price: "от 3₽/ед."
     },
     {
       icon: "Box",
       title: "Хранение",
-      description: "Современный склад класса А с оптимальными условиями",
+      description: "Современный склад с оптимальными условиями внутри МКАД",
       price: "от 50₽/м³/сутки"
     },
     {
       icon: "Warehouse",
-      title: "Комплектация",
+      title: "Обработка",
       description: "Сборка заказов и упаковка по стандартам маркетплейсов",
-      price: "от 25₽/заказ"
+      price: "от 5₽/шт."
     },
     {
       icon: "Truck",
       title: "Отгрузка",
       description: "Доставка на склады Wildberries, OZON, Яндекс Маркет",
-      price: "от 100₽/поставка"
+      price: "от 400₽"
     },
     {
       icon: "Tag",
       title: "Маркировка",
       description: "Нанесение штрих-кодов и этикеток маркетплейсов",
-      price: "от 5₽/шт"
+      price: "от 3₽/шт."
     },
     {
       icon: "FileBarChart",
@@ -42,50 +69,7 @@ const Index = () => {
     }
   ];
 
-  const tariffs = [
-    {
-      name: "Старт",
-      price: "9 900₽",
-      period: "/месяц",
-      features: [
-        "До 100 м³ хранения",
-        "500 заказов в месяц",
-        "Базовая упаковка",
-        "Стандартная отчётность",
-        "Приёмка 5 дней в неделю"
-      ],
-      popular: false
-    },
-    {
-      name: "Бизнес",
-      price: "24 900₽",
-      period: "/месяц",
-      features: [
-        "До 300 м³ хранения",
-        "2000 заказов в месяц",
-        "Премиум упаковка",
-        "Расширенная аналитика",
-        "Приёмка 7 дней в неделю",
-        "Личный менеджер"
-      ],
-      popular: true
-    },
-    {
-      name: "Профи",
-      price: "49 900₽",
-      period: "/месяц",
-      features: [
-        "До 1000 м³ хранения",
-        "Безлимит заказов",
-        "VIP упаковка",
-        "API интеграция",
-        "24/7 приёмка",
-        "Выделенная зона",
-        "Приоритетная обработка"
-      ],
-      popular: false
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -117,7 +101,7 @@ const Index = () => {
                 <span className="font-semibold">+7 (922) 901-81-79</span>
               </a>
               <a 
-                href="https://wa.me/79999999999" 
+                href="https://wa.me/79229018179" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors"
@@ -125,7 +109,7 @@ const Index = () => {
                 <Icon name="MessageCircle" className="text-white" size={20} />
               </a>
               <a 
-                href="https://t.me/yourcompany" 
+                href="https://t.me/+79229018179" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors"
@@ -228,52 +212,78 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              Прозрачные тарифы
+              Заказать индивидуальный расчет
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Выберите план, который подходит вашему бизнесу. Без скрытых платежей.
+              Оставьте заявку и мы рассчитаем стоимость специально для вашего бизнеса
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {tariffs.map((tariff, index) => (
-              <Card 
-                key={index} 
-                className={`relative hover:shadow-2xl transition-all duration-300 ${
-                  tariff.popular ? 'border-4 border-primary shadow-xl scale-105' : 'hover:-translate-y-2'
-                }`}
-              >
-                {tariff.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full font-bold shadow-lg">
-                    Популярный
-                  </div>
-                )}
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-2">{tariff.name}</h3>
-                  <div className="mb-6">
-                    <span className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                      {tariff.price}
-                    </span>
-                    <span className="text-gray-600">{tariff.period}</span>
-                  </div>
-                  <ul className="space-y-4 mb-8">
-                    {tariff.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="flex items-start gap-3">
-                        <Icon name="CheckCircle2" className="text-primary flex-shrink-0 mt-1" size={20} />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    className="w-full" 
-                    size="lg"
-                    variant={tariff.popular ? "default" : "outline"}
-                  >
-                    {tariff.popular ? "Выбрать план" : "Узнать больше"}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Card className="max-w-2xl mx-auto shadow-2xl border-2">
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold mb-2 text-gray-700">
+                    Ваше имя *
+                  </label>
+                  <Input
+                    id="name"
+                    type="text"
+                    required
+                    placeholder="Иван Иванов"
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-semibold mb-2 text-gray-700">
+                    Телефон *
+                  </label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    required
+                    placeholder="+7 (___) ___-__-__"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold mb-2 text-gray-700">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="example@mail.ru"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold mb-2 text-gray-700">
+                    Комментарий
+                  </label>
+                  <Textarea
+                    id="message"
+                    placeholder="Расскажите о вашем товаре и объемах..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    className="min-h-[120px]"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full text-lg">
+                  <Icon name="Send" className="mr-2" size={20} />
+                  Отправить заявку
+                </Button>
+                <p className="text-sm text-gray-500 text-center">
+                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                </p>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -289,7 +299,7 @@ const Index = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A64d8ae8f9f8c4b3c8e5a9f1c2d3e4f5a&amp;source=constructor"
+              src="https://yandex.ru/map-widget/v1/?ll=37.584163%2C55.879569&amp;z=17&amp;l=map&amp;pt=37.584163%2C55.879569,pm2rdm"
               width="100%"
               height="500"
               frameBorder="0"

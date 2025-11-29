@@ -81,7 +81,7 @@ const Index = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                 <Icon name="Warehouse" className="text-white" size={24} />
               </div>
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-black text-4xl">MP Box</span>
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-black text-2xl md:text-4xl">MP Box</span>
             </div>
 
             <nav className="hidden md:flex items-center gap-8">
@@ -163,47 +163,47 @@ const Index = () => {
         )}
       </header>
 
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-4">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="animate-fade-in">
-              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-                <span className="text-primary font-semibold my-0.5 mx-1 text-3xl">Фулфилмент для маркетплейсов</span>
+              <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-primary/10 rounded-full mb-4 md:mb-6">
+                <span className="text-primary font-semibold text-sm md:text-base">Фулфилмент для маркетплейсов</span>
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                 Ваш надёжный партнёр на{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   складе
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed">
                 Профессиональные услуги хранения, комплектации и отгрузки товаров для селлеров 
                 Wildberries, OZON и Яндекс Маркет. Прозрачные тарифы без скрытых платежей.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 md:gap-4">
                 <Button 
                   size="lg" 
-                  className="text-xl px-12 py-7 shadow-lg hover:shadow-xl transition-shadow"
+                  className="text-base md:text-xl px-6 py-5 md:px-12 md:py-7 shadow-lg hover:shadow-xl transition-shadow"
                   onClick={() => {
                     document.getElementById('tariffs')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  <Icon name="Calculator" className="mr-2" size={24} />
+                  <Icon name="Calculator" className="mr-2" size={20} />
                   Рассчитать стоимость
                 </Button>
               </div>
-              <div className="flex gap-8 mt-12">
+              <div className="flex gap-4 md:gap-8 mt-8 md:mt-12">
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-1">100+</div>
-                  <div className="text-gray-600">Довольных клиентов</div>
+                  <div className="text-2xl md:text-4xl font-bold text-primary mb-1">100+</div>
+                  <div className="text-xs md:text-base text-gray-600">Довольных клиентов</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-secondary mb-1">700м²</div>
-                  <div className="text-gray-600">Площадь склада</div>
+                  <div className="text-2xl md:text-4xl font-bold text-secondary mb-1">700м²</div>
+                  <div className="text-xs md:text-base text-gray-600">Площадь склада</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-1">24/7</div>
-                  <div className="text-gray-600">Работаем для вас</div>
+                  <div className="text-2xl md:text-4xl font-bold text-primary mb-1">24/7</div>
+                  <div className="text-xs md:text-base text-gray-600">Работаем для вас</div>
                 </div>
               </div>
             </div>
@@ -219,31 +219,31 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-white">
+      <section id="services" className="py-12 md:py-20 px-4 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
               Полный спектр услуг
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
               Все необходимое для успешной работы на маркетплейсах в одном месте
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {services.map((service, index) => (
               <Card 
                 key={index} 
                 className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50"
               >
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={service.icon} className="text-white" size={28} />
+                <CardContent className="p-4 md:p-6">
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name={service.icon} className="text-white" size={24} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <div className="flex items-center justify-between pt-4 border-t">
-                    <span className="text-2xl font-bold text-primary">{service.price}</span>
-                    <Icon name="ArrowRight" className="text-primary group-hover:translate-x-2 transition-transform" size={20} />
+                  <h3 className="text-lg md:text-xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4">{service.description}</p>
+                  <div className="flex items-center justify-between pt-3 md:pt-4 border-t">
+                    <span className="text-xl md:text-2xl font-bold text-primary">{service.price}</span>
+                    <Icon name="ArrowRight" className="text-primary group-hover:translate-x-2 transition-transform" size={18} />
                   </div>
                 </CardContent>
               </Card>
@@ -252,19 +252,19 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="tariffs" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section id="tariffs" className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
               Заказать индивидуальный расчет
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
               Оставьте заявку и мы рассчитаем стоимость специально для Вашего товара
             </p>
           </div>
           <Card className="max-w-2xl mx-auto shadow-2xl border-2">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <CardContent className="p-4 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2 text-gray-700">
                     Ваше имя *
@@ -276,7 +276,7 @@ const Index = () => {
                     placeholder="Иван Иванов"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="h-12"
+                    className="h-10 md:h-12"
                   />
                 </div>
                 <div>
@@ -290,7 +290,7 @@ const Index = () => {
                     placeholder="+7 (___) ___-__-__"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="h-12"
+                    className="h-10 md:h-12"
                   />
                 </div>
 
@@ -303,14 +303,14 @@ const Index = () => {
                     placeholder="Расскажите о вашем товаре и объемах..."
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="min-h-[120px]"
+                    className="min-h-[100px] md:min-h-[120px]"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full text-lg">
+                <Button type="submit" size="lg" className="w-full text-base md:text-lg">
                   <Icon name="Send" className="mr-2" size={20} />
                   Отправить заявку
                 </Button>
-                <p className="text-sm text-gray-500 text-center">
+                <p className="text-xs md:text-sm text-gray-500 text-center">
                   Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
                 </p>
               </form>
@@ -319,17 +319,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="map" className="py-20 px-4 bg-gray-50">
+      <section id="map" className="py-12 md:py-20 px-4 bg-gray-50">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
               Мы находимся в Москве
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-base md:text-xl text-gray-600">
               Удобное расположение для быстрой доставки на склады маркетплейсов
             </p>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[300px] md:h-[500px]">
             <iframe
               src="https://yandex.ru/map-widget/v1/?ll=37.577040,55.866925&amp;z=17&amp;l=map&amp;pt=37.577040,55.866925,pm2rdm"
               width="100%"
@@ -339,49 +339,49 @@ const Index = () => {
               title="Карта местоположения склада"
             ></iframe>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 mt-6 md:mt-12">
             <Card>
-              <CardContent className="p-6 text-center">
-                <Icon name="MapPin" className="mx-auto mb-4 text-primary" size={32} />
-                <h3 className="font-bold text-lg mb-2">Адрес склада</h3>
-                <p className="text-gray-600">г. Москва, Алтуфьевское шоссе д. 37с42</p>
+              <CardContent className="p-4 md:p-6 text-center">
+                <Icon name="MapPin" className="mx-auto mb-2 md:mb-4 text-primary" size={24} />
+                <h3 className="font-bold text-base md:text-lg mb-1 md:mb-2">Адрес склада</h3>
+                <p className="text-sm md:text-base text-gray-600">г. Москва, Алтуфьевское шоссе д. 37с42</p>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-6 text-center">
-                <Icon name="Clock" className="mx-auto mb-4 text-primary" size={32} />
-                <h3 className="font-bold text-lg mb-2">Режим работы склада</h3>
-                <p className="text-gray-600">Пн-Пт: 09:00 - 18:00</p>
+              <CardContent className="p-4 md:p-6 text-center">
+                <Icon name="Clock" className="mx-auto mb-2 md:mb-4 text-primary" size={24} />
+                <h3 className="font-bold text-base md:text-lg mb-1 md:mb-2">Режим работы склада</h3>
+                <p className="text-sm md:text-base text-gray-600">Пн-Пт: 09:00 - 18:00</p>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-6 text-center">
-                <Icon name="Phone" className="mx-auto mb-4 text-primary" size={32} />
-                <h3 className="font-bold text-lg mb-2">Телефон</h3>
-                <p className="text-gray-600">+7 (922) 901-81-79</p>
+              <CardContent className="p-4 md:p-6 text-center">
+                <Icon name="Phone" className="mx-auto mb-2 md:mb-4 text-primary" size={24} />
+                <h3 className="font-bold text-base md:text-lg mb-1 md:mb-2">Телефон</h3>
+                <p className="text-sm md:text-base text-gray-600">+7 (922) 901-81-79</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-white py-12 px-4">
+      <footer className="bg-gray-900 text-white py-8 md:py-12 px-4">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                   <Icon name="Warehouse" className="text-white" size={24} />
                 </div>
-                <span className="text-xl font-bold">Mp Box</span>
+                <span className="text-lg md:text-xl font-bold">Mp Box</span>
               </div>
-              <p className="text-gray-400">
+              <p className="text-sm md:text-base text-gray-400">
                 Профессиональный фулфилмент для маркетплейсов
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Услуги</h4>
-              <ul className="space-y-2 text-gray-400">
+              <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Услуги</h4>
+              <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-400">
                 <li><a href="#" className="hover:text-primary transition-colors">Приёмка товара</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Хранение</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Комплектация</a></li>
@@ -389,8 +389,8 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Компания</h4>
-              <ul className="space-y-2 text-gray-400">
+              <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Компания</h4>
+              <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-400">
                 <li><a href="#" className="hover:text-primary transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Тарифы</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Контакты</a></li>
@@ -398,8 +398,8 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Контакты</h4>
-              <ul className="space-y-2 text-gray-400">
+              <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Контакты</h4>
+              <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-400">
                 <li className="flex items-center gap-2">+7 (922) 901-81-79</li>
                 <li className="flex items-center gap-2">ffmpbox@mail.ru</li>
                 <li className="flex items-center gap-2">
@@ -409,8 +409,8 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2025 MpBox. Все права защищены.</p>
+          <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400">
+            <p className="text-xs md:text-sm">© 2025 MpBox. Все права защищены.</p>
           </div>
         </div>
       </footer>

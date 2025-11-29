@@ -142,7 +142,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-                <span className="text-primary font-semibold">Фулфилмент для маркетплейсов</span>
+                <span className="text-primary font-semibold my-0.5 mx-1 text-3xl">Фулфилмент для маркетплейсов</span>
               </div>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Ваш надёжный партнёр на{" "}
@@ -301,15 +301,15 @@ const Index = () => {
             <Card>
               <CardContent className="p-6 text-center">
                 <Icon name="MapPin" className="mx-auto mb-4 text-primary" size={32} />
-                <h3 className="font-bold text-lg mb-2">Адрес</h3>
-                <p className="text-gray-600">г. Москва, ул. Складская, д. 42</p>
+                <h3 className="font-bold text-lg mb-2">Адрес склада</h3>
+                <p className="text-gray-600">г. Москва, Алтуфьевское шоссе д. 37с42</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6 text-center">
                 <Icon name="Clock" className="mx-auto mb-4 text-primary" size={32} />
-                <h3 className="font-bold text-lg mb-2">Режим работы</h3>
-                <p className="text-gray-600">Пн-Вс: 08:00 - 22:00</p>
+                <h3 className="font-bold text-lg mb-2">Режим работы склада</h3>
+                <p className="text-gray-600">Пн-Пт: 09:00 - 18:00</p>
               </CardContent>
             </Card>
             <Card>
@@ -359,10 +359,7 @@ const Index = () => {
               <h4 className="font-bold mb-4">Контакты</h4>
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center gap-2">+7 (922) 901-81-79</li>
-                <li className="flex items-center gap-2">
-                  <Icon name="Mail" size={16} />
-                  info@fulfillpro.ru
-                </li>
+                <li className="flex items-center gap-2">ffmpbox@mail.ru</li>
                 <li className="flex items-center gap-2">
                   <Icon name="MapPin" size={16} />
                   г. Москва
@@ -371,7 +368,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 FulfillPro. Все права защищены.</p>
+            <p>© 2025 MpBox. Все права защищены.</p>
           </div>
         </div>
       </footer>

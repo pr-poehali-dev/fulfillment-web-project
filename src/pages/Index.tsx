@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const { toast } = useToast();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -116,9 +117,50 @@ const Index = () => {
               >
                 <Icon name="Send" className="text-white" size={20} />
               </a>
+              <button 
+                className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} className="text-gray-700" />
+              </button>
             </div>
           </div>
         </div>
+        
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t animate-fade-in">
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+              <a 
+                href="#services" 
+                className="text-gray-700 hover:text-primary transition-colors font-medium py-2 border-b"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Услуги
+              </a>
+              <a 
+                href="#tariffs" 
+                className="text-gray-700 hover:text-primary transition-colors font-medium py-2 border-b"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Тарифы
+              </a>
+              <a 
+                href="#map" 
+                className="text-gray-700 hover:text-primary transition-colors font-medium py-2 border-b"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Контакты
+              </a>
+              <a 
+                href="tel:+79229018179" 
+                className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors font-semibold py-2"
+              >
+                <Icon name="Phone" size={18} />
+                +7 (922) 901-81-79
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
       <section className="pt-32 pb-20 px-4">
@@ -139,12 +181,16 @@ const Index = () => {
                 Wildberries, OZON и Яндекс Маркет. Прозрачные тарифы без скрытых платежей.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#tariffs">
-                  <Button size="lg" className="text-xl px-12 py-7 shadow-lg hover:shadow-xl transition-shadow">
-                    <Icon name="Calculator" className="mr-2" size={24} />
-                    Рассчитать стоимость
-                  </Button>
-                </a>
+                <Button 
+                  size="lg" 
+                  className="text-xl px-12 py-7 shadow-lg hover:shadow-xl transition-shadow"
+                  onClick={() => {
+                    document.getElementById('tariffs')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  <Icon name="Calculator" className="mr-2" size={24} />
+                  Рассчитать стоимость
+                </Button>
               </div>
               <div className="flex gap-8 mt-12">
                 <div>
@@ -213,7 +259,7 @@ const Index = () => {
               Заказать индивидуальный расчет
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Оставьте заявку и мы рассчитаем стоимость специально для вашего бизнеса
+              Оставьте заявку и мы рассчитаем стоимость специально для Вашего товара
             </p>
           </div>
           <Card className="max-w-2xl mx-auto shadow-2xl border-2">
@@ -285,7 +331,7 @@ const Index = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=37.587226,55.879403&amp;z=17&amp;l=map&amp;pt=37.587226,55.879403,pm2rdm"
+              src="https://yandex.ru/map-widget/v1/?ll=37.577040,55.866925&amp;z=17&amp;l=map&amp;pt=37.577040,55.866925,pm2rdm"
               width="100%"
               height="500"
               frameBorder="0"

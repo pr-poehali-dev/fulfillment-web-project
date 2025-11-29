@@ -96,9 +96,7 @@ const Index = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                 <Icon name="Warehouse" className="text-white" size={24} />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                FulfillPro
-              </span>
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-black text-4xl">MP Box</span>
             </div>
 
             <nav className="hidden md:flex items-center gap-8">
@@ -116,7 +114,7 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <a href="tel:+74951234567" className="hidden lg:flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                 <Icon name="Phone" size={18} />
-                <span className="font-semibold">+7 (495) 123-45-67</span>
+                <span className="font-semibold">+7 (922) 901-81-79</span>
               </a>
               <a 
                 href="https://wa.me/79999999999" 
@@ -168,11 +166,11 @@ const Index = () => {
               </div>
               <div className="flex gap-8 mt-12">
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-1">2500+</div>
+                  <div className="text-4xl font-bold text-primary mb-1">100+</div>
                   <div className="text-gray-600">Довольных клиентов</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-secondary mb-1">5000м²</div>
+                  <div className="text-4xl font-bold text-secondary mb-1">700м²</div>
                   <div className="text-gray-600">Площадь склада</div>
                 </div>
                 <div>
@@ -318,7 +316,7 @@ const Index = () => {
               <CardContent className="p-6 text-center">
                 <Icon name="Phone" className="mx-auto mb-4 text-primary" size={32} />
                 <h3 className="font-bold text-lg mb-2">Телефон</h3>
-                <p className="text-gray-600">+7 (495) 123-45-67</p>
+                <p className="text-gray-600">+7 (922) 901-81-79</p>
               </CardContent>
             </Card>
           </div>
@@ -360,10 +358,7 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-4">Контакты</h4>
               <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center gap-2">
-                  <Icon name="Phone" size={16} />
-                  +7 (495) 123-45-67
-                </li>
+                <li className="flex items-center gap-2">+7 (922) 901-81-79</li>
                 <li className="flex items-center gap-2">
                   <Icon name="Mail" size={16} />
                   info@fulfillpro.ru
